@@ -1,65 +1,68 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-[#0a0a0a] text-zinc-900 dark:text-zinc-100">
+      {/* Glow Effect Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-orange-500/10 rounded-full blur-[120px]" />
+        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]" />
+      </div>
+
+      <main className="relative z-10 flex flex-col items-center w-full max-w-4xl px-6 text-center">
+        {/* Brand Header */}
+        <div className="mb-8 flex flex-col items-center">
+          <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/20 mb-6">
+            <span className="text-3xl font-bold text-white">B</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+            Build-a-Flare <span className="text-orange-500">Lab</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+            A high-performance L7 security and e-commerce origin. 
+            Powered by Next.js 16, DigitalOcean, and Cloudflare.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* System Status Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-12">
+          {[
+            { label: "Origin", status: "Online", detail: "DigitalOcean Droplet", color: "bg-green-500" },
+            { label: "Proxy", status: "Active", detail: "Nginx 1.24", color: "bg-green-500" },
+            { label: "Edge", status: "Proxied", detail: "Cloudflare L7", color: "bg-orange-500" }
+          ].map((item) => (
+            <div key={item.label} className="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-left shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <div className={`h-2 w-2 rounded-full ${item.color}`} />
+                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">{item.label}</span>
+              </div>
+              <div className="text-lg font-semibold mb-1">{item.status}</div>
+              <div className="text-sm text-zinc-500">{item.detail}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="/shop" 
+            className="px-8 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full font-bold transition-transform hover:scale-105"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Enter ProStore
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          <a 
+            href="https://github.com/milesalsmith/build-a-flare" 
             target="_blank"
-            rel="noopener noreferrer"
+            className="px-8 py-4 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full font-bold transition-all hover:bg-zinc-50 dark:hover:bg-zinc-700"
           >
-            Documentation
+            View Lab Docs
           </a>
         </div>
       </main>
+
+      <footer className="absolute bottom-8 text-sm text-zinc-500 font-medium">
+        Q1 2026 Build-a-Flare Milestone 01
+      </footer>
     </div>
   );
 }
