@@ -12,15 +12,17 @@ const Footer = () => {
           
           {/* Bottom Left: Logo & Copyright */}
           <div className='flex flex-col items-center md:items-start gap-3'>
-             <Link href='/' className='flex items-center gap-2 group'>
-                <Image
-                  src='/images/buildaflare.svg'
-                  alt={`${APP_NAME} logo`}
-                  height={42} 
-                  width={42}
-                  className="opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-             </Link>
+            <Link href='/' className='flex items-center gap-2 group'>
+            <Image
+                src='/images/buildaflare.svg'
+                alt={`${APP_NAME} logo`}
+                height={42} 
+                width={42}
+                // h-10 is 40px, h-12 is 48px. 
+                // Using 'object-contain' ensures it doesn't distort.
+                className="h-10 w-auto object-contain flex-shrink-0 opacity-80 group-hover:opacity-100 transition-opacity"
+            />
+            </Link>
              <p className='text-sm'>
                &copy; {currentYear} {APP_NAME}. All Rights Reserved.
              </p>
