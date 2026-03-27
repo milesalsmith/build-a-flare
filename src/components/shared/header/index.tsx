@@ -11,7 +11,7 @@ const Header = () => {
           <Link href='/' className='flex items-center gap-3 group'>
             {/* Swapping the <div> for your actual logo */}
             <Image 
-              src="/logo.svg"  // Change this to your filename (e.g., /logo.png)
+              src="/logo.svg"
               alt={`${APP_NAME} logo`}
               width={40}
               height={40}
