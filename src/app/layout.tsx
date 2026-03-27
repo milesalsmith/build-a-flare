@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   metadataBase: new URL(SERVER_URL),
+  icons: {
+    icon: '/images/logo.svg', 
+    shortcut: '/images/logo.svg',
+    apple: '/images/logo.svg',
+  },
 };
 
 export default function RootLayout({
