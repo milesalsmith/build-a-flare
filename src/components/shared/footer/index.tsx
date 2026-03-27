@@ -16,13 +16,10 @@ const Footer = () => {
                 <Image
                   src='/images/buildaflare.svg'
                   alt={`${APP_NAME} logo`}
-                  height={32} 
-                  width={32}
+                  height={42} 
+                  width={42}
                   className="opacity-80 group-hover:opacity-100 transition-opacity"
                 />
-                <span className="font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
-                    {APP_NAME}
-                </span>
              </Link>
              <p className='text-sm'>
                &copy; {currentYear} {APP_NAME}. All Rights Reserved.
