@@ -4,6 +4,9 @@ import "./globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from "@/lib/constants";
+// 1. Siphon the providers from Brad
+import { ThemeProvider } from 'next-themes';
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,14 +42,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header />
-        
-        {/* flex-grow ensures the footer stays at the bottom on short pages */}
-        <main className="grow container mx-auto px-4 py-8">
-          {children}
-        </main>
+        {/* 2. Wrap everything in the ThemeProvider so Dark Mode works across the site */}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          
+          <main className="grow container mx-auto px-4 py-8">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+          
+          {/* 3. Add the Toaster at the bottom of the body */}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
