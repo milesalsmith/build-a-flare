@@ -15,7 +15,7 @@ const Header = () => {
           
           <Link href='/' className='flex items-center ml-4 group'>
             <Image
-              src='/images/logo.svg' // Path is relative to the 'public' folder
+              src='/images/logo.svg' 
               alt={`${APP_NAME} logo`}
               height={48}
               width={48}
