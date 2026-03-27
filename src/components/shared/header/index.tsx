@@ -11,11 +11,11 @@ const Header = () => {
           <Link href='/' className='flex items-center gap-3 group'>
             {/* Swapping the <div> for your actual logo */}
             <Image 
-              src="/logo.svg"
+              src="/public/logo.svg"
               alt={`${APP_NAME} logo`}
               width={40}
               height={40}
-              priority // This tells Next.js 16 to load this image first
+              priority 
               className="object-contain"
             />
             <span className='hidden lg:block font-bold text-xl tracking-tight'>
