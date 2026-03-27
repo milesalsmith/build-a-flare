@@ -48,7 +48,7 @@ export default function Home() {
             href="/shop" 
             className="px-8 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full font-bold transition-transform hover:scale-105"
           >
-            Enter ProStore
+            Enter Build-a-Flare
           </a>
           <a 
             href="https://github.com/milesalsmith/build-a-flare" 
