@@ -12,7 +12,7 @@ export default function Home() {
       <main className="relative z-10 flex flex-col items-center w-full max-w-4xl px-6 text-center">
         {/* Brand Header */}
         <div className="mb-8 flex flex-col items-center">
-          <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/20 mb-6">
+          <div className="h-16 w-16 rounded-2xl bg-linear-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg shadow-orange-500/20 mb-6">
             <span className="text-3xl font-bold text-white">B</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">

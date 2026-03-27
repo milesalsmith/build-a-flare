@@ -20,7 +20,7 @@ const Footer = () => {
                 width={42}
                 // h-10 is 40px, h-12 is 48px. 
                 // Using 'object-contain' ensures it doesn't distort.
-                className="h-10 w-auto object-contain flex-shrink-0 opacity-80 group-hover:opacity-100 transition-opacity"
+                className="h-10 w-auto object-contain shrink-0 opacity-80 group-hover:opacity-100 transition-opacity"
             />
             </Link>
              <p className='text-sm'>

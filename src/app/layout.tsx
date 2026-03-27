@@ -42,7 +42,7 @@ export default function RootLayout({
         <Header />
         
         {/* flex-grow ensures the footer stays at the bottom on short pages */}
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="grow container mx-auto px-4 py-8">
           {children}
         </main>
 
