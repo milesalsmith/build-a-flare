@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // We'll keep this local until we create your constants file
-const APP_NAME = "Build-a-Flare";
+import { APP_NAME } from '@/lib/constants';
 
 const Header = () => {
   return (
