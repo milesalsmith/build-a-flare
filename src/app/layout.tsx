@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/assets/styles/globals.css";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from "@/lib/constants";
-// 1. Siphon the providers from Brad
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from "@/components/ui/sonner";
 
