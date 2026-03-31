@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🔥 Build-a-Flare
+An ultra-modern, high-performance E-commerce platform built with the Next.js 16 "Bleeding Edge" stack. This project moves away from traditional resource-heavy deployments toward a streamlined Local-Build-to-Origin architecture.
 
-## Getting Started
+🏗️ The Stack
+Framework: Next.js 16 (App Router & Turbopack)
 
-First, run the development server:
+Library: React 19 (React Compiler enabled)
 
-```bash
+Styling: Tailwind CSS 4.0 (OKLCH Color Engine)
+
+Infrastructure: DigitalOcean 8GB Premium AMD Droplet
+
+Runtime: Node.js 20 LTS managed by PM2
+
+Web Server: Nginx (Reverse Proxy)
+
+🚀 Infrastructure Architecture
+Unlike standard deployments that build on the server, Build-a-Flare utilizes a "Mac-as-the-Engine" strategy:
+
+Innovation Layer: Development and compilation happen locally on macOS.
+
+Sync Layer: Optimized production bundles are beamed to the origin via rsync.
+
+Production Layer: The 8GB Droplet focuses 100% of its resources on serving traffic and handling the database.
+
+🛠️ Development Workflow
+Local Development
+Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 to view the live development server with HMR.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deployment (The "One-Command" Push)
+The project includes a custom deploy.sh script that handles the local build, remote synchronization, and server-side process resurrection.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Bash
+chmod +x deploy.sh # Only needed once
+./deploy.sh
+🛡️ Server Management
+The production environment is hardened for stability:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Process Management: Managed by PM2 with auto-resurrection on system reboots.
 
-## Learn More
+Static Assets: Served via Nginx with optimized caching headers for /_next/static.
 
-To learn more about Next.js, take a look at the following resources:
+Networking: Locked to a Reserved IP for zero-downtime hardware migrations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🎯 Project Roadmap
+[x] High-performance 8GB Origin Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[x] OKLCH / Tailwind 4 Design System
 
-## Deploy on Vercel
+[x] Local-to-Edge Deployment Pipeline
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[ ] Prisma & PostgreSQL Integration (Current Phase)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[ ] React 19 Server Actions for "Add to Cart"
+
+[ ] Cloudflare Tunnel "Stealth Mode"
